@@ -1,0 +1,27 @@
+<mat-card class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="pontuacao">
+    <mat-form-field appearance="fill"  class="width-max">
+      <mat-label>Player id</mat-label>
+      <mat-select formControlName='id'>
+        <mat-option *ngFor="let id of idList" [value]="id.value">
+          {{id.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width-max">
+      <mat-label>Nome do jogador</mat-label>
+      <input matInput class="width-max" placeholder="nome" formControlName='nome'>
+      <mat-hint>Nome</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="width-max">
+      <mat-label>Pontuação do jogador</mat-label>
+      <input matInput class="width-max" placeholder="pontuacao" type="number" formControlName='pontos'>
+      <mat-hint>Pontos</mat-hint>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button class="width-max" color='primary' [disabled]="!pontuacao.valid"
+        type="submit">Enviar</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
