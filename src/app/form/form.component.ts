@@ -13,30 +13,24 @@ interface Food {
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  idList: Food[] = [
-    { value: 'A', viewValue: 'Player 1' },
-    { value: 'B', viewValue: 'Player 2' },
-
-  ];
   pontuacao: FormGroup;
   Info: any;
+
   constructor(private http: ConfigService) {
     this.pontuacao = new FormGroup({
-      id: new FormControl('', Validators.required),
       nome: new FormControl('', Validators.required),
       pontos: new FormControl('', Validators.required),
     })
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.Info = await this.http.get('Player');
   }
 
   async onSubmit() {
-    console.log(this.pontuacao.value);
+    this.Info !== null ? await this.http.set('Player', [...this.Info, { Players: this.pontuacao.value }]) : await this.http.set('Player', [{ Players: this.pontuacao.value }]);
 
-    this.Info = this.pontuacao.value.id === 'A' ? await this.http.set('PlayerA', { Players: this.pontuacao.value })
-      : await this.http.set('PlayerB', { Players: this.pontuacao.value });
-
+    this.Info = await this.http.get('Player');
   }
 
 }

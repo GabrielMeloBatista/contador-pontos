@@ -48,6 +48,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+  text-align: center;
 }
 body {
   margin: 0;
@@ -55,4 +56,20 @@ body {
 }
 .width-max {
   width: 100%;
+}
+
+app-root {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-card {
+  width: 40%;
+}
+
+app-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
