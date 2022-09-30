@@ -12,10 +12,9 @@
       <input matInput class="width-max" placeholder="pontuacao" type="number" formControlName='pontos'>
       <mat-hint>Pontos</mat-hint>
     </mat-form-field>
-    
-    <mat-card-actions>
-      <button mat-raised-button class="width-max" color='primary' [disabled]="!pontuacao.valid"
-        type="submit">Enviar</button>
-    </mat-card-actions>
+
+    <button mat-raised-button class="width-max" color='primary' [disabled]="!pontuacao.valid"
+      type="submit">Enviar</button>
   </form>
+  <button mat-raised-button class="width-max" color='primary' (click)="clearHighscore()">Limpar HIGHSCORE</button>
 </mat-card>

@@ -31,6 +31,13 @@ export class FormComponent implements OnInit {
     this.Info !== null ? await this.http.set('Player', [...this.Info, { Players: this.pontuacao.value }]) : await this.http.set('Player', [{ Players: this.pontuacao.value }]);
 
     this.Info = await this.http.get('Player');
+
+    this.pontuacao.reset('');
+  }
+
+  async clearHighscore() {
+    await this.http.clear();
+    this.Info = await this.http.get('Player');
   }
 
 }
