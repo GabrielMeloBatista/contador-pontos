@@ -1,7 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { merge, startWith, map, catchError, switchMap } from 'rxjs';
+import { AfterViewInit, Component } from '@angular/core';
 import { ConfigService } from '../config.service';
 
 @Component({
