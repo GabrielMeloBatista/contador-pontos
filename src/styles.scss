@@ -63,8 +63,14 @@ app-root {
   margin-right: auto;
 }
 
-mat-card {
+.card {
   width: 40%;
+}
+
+@media only screen and (max-width: 700px) {
+  .card {
+    width: 80%;
+  }
 }
 
 app-form {
@@ -75,4 +81,9 @@ app-form {
 
 .center {
   text-align: center;
+}
+
+mat-toolbar {
+  top: 0;
+  position: absolute;
 }
