@@ -7,16 +7,17 @@ import { SelecaoComponent } from './selecao/selecao.component';
 const routes: Routes = [
   {
     path: '',
-    component: SelecaoComponent
+    component: SelecaoComponent,
+    children: [{
+      path: 'form',
+      component: FormComponent
+    },
+    {
+      path: 'contador',
+      component: ContadorComponent
+    }]
   },
-  {
-    path: 'form',
-    component: FormComponent
-  },
-  {
-    path: 'contador',
-    component: ContadorComponent
-  }
+
 ];
 
 @NgModule({
