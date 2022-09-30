@@ -7,7 +7,7 @@ import { ConfigService } from '../config.service';
   styleUrls: ['./contador.component.scss']
 })
 export class ContadorComponent implements AfterViewInit {
-  displayedColumns: string[] = ['Nome', 'Pontos'];
+  displayedColumns: string[] = ['Nome', 'Pontos', 'escola'];
   data: any[] = [];
   resultsLength: number = 0;
 

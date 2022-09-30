@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../config.service';
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -20,6 +15,8 @@ export class FormComponent implements OnInit {
     this.pontuacao = new FormGroup({
       nome: new FormControl('', Validators.required),
       pontos: new FormControl('', Validators.required),
+      escola: new FormControl(''),
+      contato: new FormControl(''),
     })
   }
 
@@ -33,11 +30,6 @@ export class FormComponent implements OnInit {
     this.Info = await this.http.get('Player');
 
     this.pontuacao.reset('');
-  }
-
-  async clearHighscore() {
-    await this.http.clear();
-    this.Info = await this.http.get('Player');
   }
 
 }

@@ -3,18 +3,33 @@
 
     <mat-form-field appearance="fill" class="width-max">
       <mat-label>Nome do jogador</mat-label>
-      <input matInput class="width-max" placeholder="nome" formControlName='nome'>
+      <input matInput class="width-max" placeholder="nome" formControlName='nome' maxlength="60">
       <mat-hint>Nome</mat-hint>
+      <mat-error>Campo obrigatório</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="width-max">
       <mat-label>Pontuação do jogador</mat-label>
-      <input matInput class="width-max" placeholder="pontuacao" type="number" formControlName='pontos'>
+      <input matInput class="width-max" placeholder="pontuacao" type="number" min="0" max="300" formControlName='pontos'
+        maxlength="60">
       <mat-hint>Pontos</mat-hint>
+      <mat-error>Precisa ser um numero entre 0 é 300</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width-max">
+      <mat-label maxlength="60">Escola do jogador</mat-label>
+      <input matInput class="width-max" placeholder="escola" formControlName='escola'>
+      <mat-hint>Escola</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width-max">
+      <mat-label>Contato</mat-label>
+      <input matInput class="width-max" placeholder="contato" formControlName='contato' maxlength="60">
+      <mat-hint>Whatsapp ou Email</mat-hint>
     </mat-form-field>
 
     <button mat-raised-button class="width-max" color='primary' [disabled]="!pontuacao.valid"
       type="submit">Enviar</button>
   </form>
-  <button mat-raised-button class="width-max" color='primary' (click)="clearHighscore()">Limpar HIGHSCORE</button>
+  <mat-hint>Campos de texto com * são obrigatórios</mat-hint>
 </mat-card>

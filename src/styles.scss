@@ -48,7 +48,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  text-align: center;
 }
 body {
   margin: 0;
@@ -72,4 +71,8 @@ app-form {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.center {
+  text-align: center;
 }

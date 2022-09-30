@@ -1,4 +1,4 @@
-<h1 color='secondary'>HIGHSCORE!!!</h1>
+<h1 color='secondary' class="center">HIGHSCORE!!!</h1>
 
 <table mat-table [dataSource]="data" class="width-max" matSort matSortActive="Pontos" matSortDisableClear
   matSortDirection="desc">
@@ -16,6 +16,12 @@
   <ng-container matColumnDef="Pontos">
     <th mat-header-cell *matHeaderCellDef> Pontos </th>
     <td mat-cell *matCellDef="let element"> {{element.Players.pontos}} </td>
+  </ng-container>
+
+  <!-- Escola Column -->
+  <ng-container matColumnDef="escola">
+    <th mat-header-cell *matHeaderCellDef> Escola </th>
+    <td mat-cell *matCellDef="let element"> {{element.Players.escola}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
